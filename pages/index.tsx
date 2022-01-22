@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Login from '../components/Login';
 
 const Home: NextPage = () => {
+  console.log('glpat-DzNrtE1x7YUxyKTj1Sga');
   return (
     <div>
       <Head>

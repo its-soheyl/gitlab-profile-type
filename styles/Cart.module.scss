@@ -47,14 +47,14 @@
         font-family: inherit;
         color: v.$color-dark;
         transition: all 0.5s ease;
+      }
 
-        ::placeholder {
-          color: v.$color-transparency;
-        }
+      .cart_input::placeholder {
+        color: v.$color-transparency;
+      }
 
-        :focus {
-          border: 2px solid v.$color-primary;
-        }
+      .cart_input:focus {
+        border: 2px solid v.$color-primary;
       }
 
       .cart_btn__send,
@@ -73,10 +73,10 @@
         font-size: 20px;
         font-family: inherit;
         transition: all 1s ease;
-
-        :hover {
-          background: v.$color-primary;
-        }
+      }
+      .cart_btn__send:hover,
+      .cart_btn__show:hover {
+        background: v.$color-primary;
       }
     }
   }
@@ -89,9 +89,8 @@
     text-decoration: none;
     margin-top: 10px;
     transition: all 0.5s ease;
-
-    :hover {
-      color: #6b4fbb;
-    }
+  }
+  .cart_get__token:hover {
+    color: #6b4fbb;
   }
 }

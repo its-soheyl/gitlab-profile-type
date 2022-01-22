@@ -1,12 +1,13 @@
 import styles from '../styles/Cart.module.scss';
-import Loader from 'react-loader-spinner';
+import { TailSpin } from 'react-loader-spinner';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUser } from '../store/user/userAPI';
 import { fetchUserToken } from '../store/user/userSlice';
+import { RootState } from '../store/store';
 
 const Cart = () => {
-  const data = useSelector((state) => state.user);
+  const data = useSelector((state: RootState) => state.user);
   const dispatch = useDispatch();
 
   console.log(data);
@@ -35,12 +36,11 @@ const Cart = () => {
             Submit
           </button>
           {data.loading ? (
-            <Loader
-              type="Puff"
+            <TailSpin
+              ariaLabel="loading"
               color="#ff600c"
               height={40}
               width={40}
-              timeout={20000}
             />
           ) : data.error ? (
             <p style={{ color: '#FF5151' }}>{data.error}</p>
