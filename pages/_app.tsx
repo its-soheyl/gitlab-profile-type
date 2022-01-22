@@ -10,7 +10,7 @@ axios.defaults.baseURL = 'https://gitlab.com/api/v4';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </Provider>
   );
 }

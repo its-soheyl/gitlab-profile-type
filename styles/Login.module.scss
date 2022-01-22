@@ -1,0 +1,41 @@
+@use '../utilities/variables.scss' as v;
+
+.container {
+  height: 100vh;
+  display: flex;
+}
+
+.rightGroup {
+  width: 55%;
+  background-image: radial-gradient(circle at 74% 13%, #ff600c, #fca326);
+  clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftGroup {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.leftGroup_title {
+  color: v.$color-dark;
+  padding: 0;
+  margin: 7rem 0 0 0;
+}
+
+.leftGroup_description {
+  color: v.$color-secondary;
+  padding: 0;
+  margin: 2px auto -70px auto;
+}
+
+.leftGroup_logo {
+  width: 820px;
+  height: 800px;
+  margin-bottom: 10px;
+}
