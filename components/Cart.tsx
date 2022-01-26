@@ -1,5 +1,6 @@
 import styles from '../styles/Cart.module.scss';
 import { TailSpin } from 'react-loader-spinner';
+import { TextField } from '@mui/material';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUser } from '../store/user/userAPI';
@@ -19,14 +20,21 @@ const Cart = () => {
           <h3 className={styles.cart_header__title}>Already Member</h3>
         </div>
         <div className={styles.cart_main}>
-          <input
+          <TextField
             className={styles.cart_input}
-            type="text"
-            placeholder="Enter your Token"
             onChange={(e) => {
               dispatch(fetchUserToken(e.target.value));
             }}
+            required
+            id="outlined-required"
+            label="Enter your Token"
+            size="medium"
           />
+          {/* <input
+            className={styles.cart_input}
+            type="text"
+            placeholder="Enter your Token"
+          /> */}
           <button
             onClick={() => {
               fetchUser(data.token, dispatch);
