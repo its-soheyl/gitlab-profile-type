@@ -1,13 +1,19 @@
-import styles from '../styles/Cart.module.scss';
+// style
+import styles from './Cart.module.scss';
+// loader spinner
 import { TailSpin } from 'react-loader-spinner';
+// materialUI
 import { TextField } from '@mui/material';
-
+// redux
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchUser } from '../store/user/userAPI';
-import { fetchUserToken } from '../store/user/userSlice';
-import { RootState } from '../store/store';
+import { fetchUser } from '../../store/user/userAPI';
+import { fetchUserToken } from '../../store/user/userSlice';
+import { RootState } from '../../store/store';
+// sass variables
 
-const Cart = () => {
+// =========================================================
+
+function Cart() {
   const data = useSelector((state: RootState) => state.user);
   const dispatch = useDispatch();
 
@@ -29,12 +35,9 @@ const Cart = () => {
             id="outlined-required"
             label="Enter your Token"
             size="medium"
+            color="secondary"
+            focused
           />
-          {/* <input
-            className={styles.cart_input}
-            type="text"
-            placeholder="Enter your Token"
-          /> */}
           <button
             onClick={() => {
               fetchUser(data.token, dispatch);
@@ -65,6 +68,6 @@ const Cart = () => {
       </a>
     </div>
   );
-};
+}
 
 export default Cart;

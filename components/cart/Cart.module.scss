@@ -1,11 +1,11 @@
-@use '../utilities/variables.scss' as v;
+@use '../../utilities/variables.scss' as v;
 
 .cart {
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  // CartBody ==========>
+  // __CartBody
   .cart_body {
     background: v.$color-white;
     width: 30rem;
@@ -45,14 +45,6 @@
         transition: all 0.5s ease;
       }
 
-      .cart_input::placeholder {
-        color: v.$color-dark;
-      }
-
-      .cart_input:focus {
-        border: 0.8px solid v.$color-primary;
-      }
-
       .cart_btn__send,
       .cart_btn__show {
         width: 90%;
@@ -76,7 +68,7 @@
       }
     }
   }
-  // CartBody ==========>
+  // /__CartBody
 
   .cart_get__token {
     color: v.$color-white;

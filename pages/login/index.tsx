@@ -1,10 +1,15 @@
+// next.js
 import Image from 'next/image';
-import logo from '../public/assets/images/gitlab-icon-rgb.svg';
-import styles from '../styles/Login.module.scss';
+// import image from assets file
+import logo from '../../public/assets/images/gitlab-icon-rgb.svg';
+// style
+import styles from '../../styles/Login.module.scss';
+// Cart
+import Cart from '../../components/cart/Cart';
 
-import Cart from './Cart';
+// ================================================================
 
-function Auth() {
+function Login() {
   return (
     <div className={styles.container}>
       <div className={styles.leftGroup}>
@@ -19,4 +24,4 @@ function Auth() {
   );
 }
 
-export default Auth;
+export default Login;
