@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 // define type for user state
 interface UsersState {
   token: string;
-  users: [];
+  users: any;
   loading: boolean;
   error: any;
 }

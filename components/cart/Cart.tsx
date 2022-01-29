@@ -1,3 +1,5 @@
+// next.js
+import Link from 'next/link';
 // style
 import styles from './Cart.module.scss';
 // loader spinner
@@ -9,7 +11,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchUser } from '../../store/user/userAPI';
 import { fetchUserToken } from '../../store/user/userSlice';
 import { RootState } from '../../store/store';
-// sass variables
 
 // =========================================================
 
@@ -56,7 +57,11 @@ function Cart() {
           ) : data.error ? (
             <p style={{ color: '#FF5151' }}>{data.error}</p>
           ) : data.error === '' || data.error ? (
-            <button className={styles.cart_btn__show}>Show Profile Info</button>
+            <Link href="/profileInfo" passHref>
+              <button className={styles.cart_btn__show}>
+                Show Profile Info
+              </button>
+            </Link>
           ) : null}
         </div>
       </div>
