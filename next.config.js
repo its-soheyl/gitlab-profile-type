@@ -6,7 +6,7 @@ const nextConfig = {
 module.exports = {
   images: {
     domains: ['gitlab.com', 'secure.gravatar.com'],
-    formats: ['image/png'],
+    formats: ['image/avif', 'image/webp'],
   },
 };
 

@@ -1,15 +1,7 @@
 import React from 'react';
-import ProfileHeader from '../../components/layouts/profileHeader/ProfileHeader';
 
-type Props = {};
-
-function ProfileInfo({}: Props) {
-  return (
-    <div>
-      Hello
-      <ProfileHeader />
-    </div>
-  );
+function ProfileInfo() {
+  return <div></div>;
 }
 
 export default ProfileInfo;
