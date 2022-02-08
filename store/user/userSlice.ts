@@ -1,15 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 // define type for user state
-interface UsersState {
+export interface IUsersState {
   token: string;
   users: any;
   loading: boolean;
-  error: any;
+  error: null | undefined | string;
 }
 
 // user state
-const initialState: UsersState = {
+const initialState: IUsersState = {
   token: '',
   users: [],
   loading: false,

@@ -1,29 +1,22 @@
-// redux
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../../store/store';
-// next.js
 import Image from 'next/image';
-
-// ==========================================================
+// redux
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../store/store';
+// styles
+import styles from './ProfileHeader.module.scss';
 
 export default function ProfileHeader() {
   const data = useSelector((state: RootState) => state.user);
-  const dispatch = useDispatch();
 
-  const url = data.users.avatar_url;
-
-  console.log(data.users.avatar_url);
   return (
-    <>
-      {data.users.length > 0 && (
-        <Image src={data.users.avatar_url} alt="Avatar" />
-      )}
-      <h4>{data.users.name}</h4>
-      <h4>{data.users.state}</h4>
-      <h4>{data.users.username}</h4>
-      <h4>{data.users.email} </h4>
-      <span>{data.users.followers}</span>
-      <span>{data.users.following}</span>
-    </>
+    <div className={styles.container}>
+      <Image src={data.users.avatar_url} alt="avatar" />
+      <h4 className={styles.name}>{data.users.name}</h4>
+      <h4 className={styles.state}>{data.users.state}</h4>
+      <h4 className={styles.username}>{data.users.username}</h4>
+      <h4 className={styles.email}>{data.users.email} </h4>
+      <span className={styles.followers}>{data.users.followers}</span>
+      <span className={styles.following}>{data.users.following}</span>
+    </div>
   );
 }

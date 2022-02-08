@@ -1,9 +1,15 @@
+//  next.js
 import type { NextPage } from 'next';
 import Head from 'next/head';
+// Component
 import Login from './login/index';
+// define BaseURL with axios
+import axios from 'axios';
+axios.defaults.baseURL = 'https://gitlab.com/api/v4';
 
 const Home: NextPage = () => {
   console.log('glpat-DzNrtE1x7YUxyKTj1Sga');
+
   return (
     <div>
       <Head>

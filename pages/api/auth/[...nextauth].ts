@@ -10,10 +10,8 @@ export default NextAuth({
     }),
   ],
   callbacks: {
-    async jwt({ token, user, account, profile, isNewUser }) {
-      console.log(token);
-      console.log(user);
-      return token;
+    session({ session, token, user }) {
+      return session; // The return type will match the one returned in `useSession()`
     },
   },
 });

@@ -7,16 +7,12 @@ import store from '../store/store';
 import { Provider } from 'react-redux';
 // Next Auth
 import { SessionProvider } from 'next-auth/react';
-// define BaseURL with axios
-import axios from 'axios';
-axios.defaults.baseURL = 'https://gitlab.com/api/v4';
-
-// =======================================================
+import { signIn, signOut, useSession } from 'next-auth/react';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
-      <SessionProvider>
+      <SessionProvider session={pageProps.session}>
         <Component {...pageProps} />
       </SessionProvider>
     </Provider>

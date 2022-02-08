@@ -11,12 +11,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchUser } from '../../store/user/userAPI';
 import { fetchUserToken } from '../../store/user/userSlice';
 import { RootState } from '../../store/store';
+import { useEffect, useRef } from 'react';
 
-// =========================================================
-
-function Cart() {
+const Cart = () => {
   const data = useSelector((state: RootState) => state.user);
   const dispatch = useDispatch();
+  const inputRef: object | any = useRef(null);
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   console.log(data);
 
@@ -28,6 +31,8 @@ function Cart() {
         </div>
         <div className={styles.cart_main}>
           <TextField
+            ref={inputRef}
+            type="text"
             className={styles.cart_input}
             onChange={(e) => {
               dispatch(fetchUserToken(e.target.value));
@@ -39,14 +44,17 @@ function Cart() {
             color="secondary"
             focused
           />
+
           <button
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault;
               fetchUser(data.token, dispatch);
             }}
             className={styles.cart_btn__send}
           >
-            Submit
+            Send
           </button>
+
           {data.loading ? (
             <TailSpin
               ariaLabel="loading"
@@ -73,6 +81,6 @@ function Cart() {
       </a>
     </div>
   );
-}
+};
 
 export default Cart;

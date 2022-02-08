@@ -3,7 +3,7 @@ import {
   fetchUserSuccess,
   fetchUserFailure,
 } from './userSlice';
-
+// axios
 import axios from 'axios';
 
 export const fetchUser = async (token: string, dispatch: any) => {
